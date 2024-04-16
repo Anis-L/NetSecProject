@@ -9,7 +9,7 @@
 * **Domain Name :**
   - `ip domain-name companyXYZ_2.sk` (Configure a domain name for name resolution within the network, if applicable)
 * **Name Server :**
-  - `ip name-server 17.16.50.0` (IP address of the DNS server for network resource resolution)
+  - `ip name-server 172.16.50.0` (IP address of the DNS server for network resource resolution)
 
 **Spanning Tree and VLAN Allocation**
 
@@ -68,27 +68,30 @@
     - `ip address 172.16.50.254 255.255.255.0` 
 
 
-**SSH configuration**
+**Security**
 
 * **Using SSH version 2**
-    - `ip ssh version 2`
-    - `ip domain-name companyXYZ.sk`
+    - `ip ssh version 2` (Enforce SSH version 2 for more secure connections)
+    - `ip domain-name companyXYZ_2.sk`
     - `crypto key generate rsa modulus 4096`
 * **Restrecting remote access only to SSH**
     - `line vty 0 1500`
     - `transport input ssh`
     - `login local `
-
-**Message digest (MD5) authentication password**
+* **Message digest (MD5) authentication password**
     - `area 0 authentication message-digest`
     - `key 36 md5 key_for_md5`
     - `area 0 authentication message-digest-key 36`
 
 **NTP Synchronization**
+
+* Configure NTP
     - `ntp server 172.16.50.1`
     - `clock timezone UTC+2 +2`
 
 **Loggins**
+
+* Enable logging for network events:
     - `logging host 172.16.50.1`
     - `logging trap notifications`
 
