@@ -1,4 +1,4 @@
-**Configurations Settings**
+**Configuration Settings**
 
 * **Enable Password :**
   - `enable secret cisco` 
@@ -66,20 +66,20 @@
     
     * **GigabitEthernet 0/0**
 
-    - `interface GigabitEthernet 0/0`
-    - `ip nat outside`
+        - `interface GigabitEthernet 0/0`
+        - `ip nat outside`
 
 
     * **GigabitEthernet 0/1**
 
-    - `interface GigabitEthernet0/1`
-    - `ip nat outside`
+        - `interface GigabitEthernet0/1`
+        - `ip nat outside`
    
   * **GigabitEthernet 0/2**
 
-    - `interface GigabitEthernet0/2`
-    - `ip nat outside`
-    - `ip nat inside`
+        - `interface GigabitEthernet0/2`
+        - `ip nat outside`
+        - `ip nat inside`
 
 **Static Routes Configuration**
     - `ip route 172.16.0.0 255.255.0.0 172.16.0.1`
@@ -136,4 +136,3 @@
     - `deny any`
 
     
-
