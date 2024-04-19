@@ -1,4 +1,4 @@
-**Configuration Settings**
+**Configurations Settings**
 
 * **Enable Password :**
   - `enable secret cisco` 
