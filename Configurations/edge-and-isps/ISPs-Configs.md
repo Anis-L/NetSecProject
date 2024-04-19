@@ -26,7 +26,7 @@
 
 **eBGP Configuration**
 
-* **Prefix-list**
+* **Prefix-list**  (l'utilisation d'une liste de préfixes pour annoncer des routes)
     - `ip prefix-list static_default permit 0.0.0.0/0`
 * **dynamic routing**
     - `router bgp 64501`
@@ -38,6 +38,8 @@
 
 
 **NAT Configuration**
+* **La configuration NAT (Network Address Translation) permet de traduire les adresses IP privées de l'entreprise en adresses IP publiques pour la communication sur Internet. La liste d'accès standard définit les adresses IP internes autorisées à être traduites, tandis que la configuration d'overload NAT spécifie l'interface utilisée pour la traduction.**
+
 * **Standard access-list 1**
     - `ip access-list standard 1`
     - `permit 195.1.1.0 0.0.0.255`
@@ -49,8 +51,8 @@
 
 
 **Dns Configuration**
+* **La configuration DNS (Domain Name System) configure le routeur pour utiliser des serveurs DNS spécifiques pour la résolution de noms de domaine. Cela permet au routeur de résoudre les noms de domaine en adresses IP pour les requêtes DNS effectuées par les périphériques de l'entreprise.**
     - `ip domain-lookup`
-    - ` ip name-server 8.8.8.8 8.8.4.4`
-
+    - `ip name-server 8.8.8.8 8.8.4.4`
 
 
