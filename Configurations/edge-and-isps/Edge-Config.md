@@ -93,7 +93,7 @@
     - `ip route 195.1.1.0 255.255.255.0 null0`
 
 **eBGP Configuration**
-* **Cette configuration active le protocole de routage eBGP et définit les voisins BGP, avec des numéros différents. Les filtres et les politiques sont également configurés pour contrôler le trafic BGP.**
+* **Cette configuration active le protocole de routage eBGP et définit les voisins BGP, avec des numéros AS (système autonome) différents. Les filtres et les politiques sont également configurés pour contrôler le trafic BGP.**
     - `router bgp 64500`
     - `neighbor 198.10.10.1 remote-as 64501`
     - `neighbor 198.10.10.1 password isp1md5pass`
