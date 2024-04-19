@@ -1,9 +1,9 @@
 **Configuration Settings**
 
 * **Enable Password :**
-  - `enable secret cisco` 
+  - `enable secret cisco`  (Active le mot de passe pour les privilèges d'administration)
 * **Username and Password:**
-  - `username admin secret cisco` 
+  - `username admin secret cisco` (Définit le nom d'utilisateur et le mot de passe pour l'authentification)
 
 
 **Interfaces configuration**
@@ -48,6 +48,8 @@
 
 
 **NAT Configuration**
+* **Cette configuration détermine comment les adresses IP internes sont traduites en adresses IP externes. Les listes d'accès définissent les réseaux internes à traduire, le pool NAT spécifie les adresses externes à utiliser, et la configuration ip nat inside source list 1 pool 1 overload active le NAT pour ces réseaux.**
+
 * **Standard access-list 1**
     - `access-list 1 permit 192.168.10.0 0.0.0.255`
     - `access-list 1 permit 192.168.20.0 0.0.0.255`
@@ -83,7 +85,7 @@
 
 
 **Static Routes Configuration**
-* **static routing**
+* **Ces commandes définissent les routes statiques pour diriger le trafic vers les réseaux spécifiés via les passerelles spécifiées.**
     - `ip route 172.16.0.0 255.255.0.0 172.16.0.1`
     - `ip route 192.168.0.0 255.255.192.0 172.16.0.1`
     - `ip route 10.0.0.0 255.0.0.0 172.16.0.1`
@@ -91,7 +93,7 @@
     - `ip route 195.1.1.0 255.255.255.0 null0`
 
 **eBGP Configuration**
-* **dynamic routing***
+* **Cette configuration active le protocole de routage eBGP et définit les voisins BGP, avec des numéros différents. Les filtres et les politiques sont également configurés pour contrôler le trafic BGP.**
     - `router bgp 64500`
     - `neighbor 198.10.10.1 remote-as 64501`
     - `neighbor 198.10.10.1 password isp1md5pass`
@@ -108,16 +110,19 @@
     
 
 **NTP Configuration**
+* **Cette configuration définit un serveur NTP pour la synchronisation horaire du routeur et configure le fuseau horaire.**
     - `ntp server 172.16.50.1`
     - `clock timezone UTC+2 +2`
     - `ntp source loopback 0`
 
 **Logging Configuration**
+* **Ces commandes définissent le niveau de sévérité des messages à enregistrer, l'hôte de destination pour les messages de journalisation, et l'interface source pour les messages de journalisation.**
     - `logging trap notifications`
     - `logging host 172.16.50.1`
     - `logging source-interface loopback 0`
 
 **Dns Client Configuration**
+* **Cette configuration définit le serveur DNS à utiliser pour les requêtes DNS et active la résolution DNS.**
     - `ip name-server 195.1.1.161`
     - `ip domain-lookup`
 
@@ -126,8 +131,9 @@
 
 * **Using SSH version 2**
 
-    - `ip ssh version 2` (Enforce SSH version 2 for more secure connections)
-    - `ip domain-name companyXYZ.sk`
+    - `ip ssh version 2` 
+    - `ip domain-name companyXYZ.sk`(Configuration du nom de domaine pour la résolution DNS)
+
     - `crypto key generate rsa modulus 4096`
 * **Restrecting remote access only to SSH**
 
@@ -142,4 +148,3 @@
     - `deny any`
 
     
-
