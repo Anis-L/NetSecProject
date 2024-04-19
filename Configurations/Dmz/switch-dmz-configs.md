@@ -63,4 +63,5 @@
 
 **Console Access**
 
-* Configure login settings for console
+- `line console 0`
+- `login local`
