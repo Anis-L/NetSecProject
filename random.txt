@@ -2,7 +2,7 @@ Users
 Guests
 Print Operators
 Backup Operators
-Repli c ator
+Repli actor
 Remote Desktop Users
 Network Configuration Operators
 Performance Monitor Users
